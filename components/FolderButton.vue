@@ -1,6 +1,8 @@
 <template>
   <button class="button">
-    <slot></slot>
+    <slot>
+      Lorem Ipsum
+    </slot>
   </button>
 </template>
 

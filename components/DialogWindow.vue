@@ -1,15 +1,24 @@
 <template>
-  <FolderButton @click="toggleWindow">Experiencias</FolderButton>
+  <FolderButton @click="toggleWindow">{{props.title}}</FolderButton>
   <section id="window" v-show="isOpen">
-    <BarWindow />
+    <BarWindow >{{props.title}}</BarWindow>
+    <WindowFrame >
+      <slot>
+        Conteudo da janela
+      </slot>
+    </WindowFrame>
   </section>
 </template>
 
 <script setup lang="ts">
 import BarWindow from "~/components/BarWindow.vue";
 
-const isOpen = ref(false)
+const props = defineProps({
+  title: String,
+});
 
+
+const isOpen = ref(false)
 function toggleWindow(){
   isOpen.value = !isOpen.value
 }
@@ -21,5 +30,7 @@ function toggleWindow(){
   top: 40%;
   left: 30%;
   z-index: 999;
+  width: 800px;
+  height: 400px;
 }
 </style>

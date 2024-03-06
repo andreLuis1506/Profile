@@ -7,7 +7,7 @@
       <h1 id="title">Hello, World!</h1>
       <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
       <div id="group-button">
-        <DialogWindow  />
+        <ExpWindow  />
         <DialogWindow  />
         <DialogWindow  />
         <DialogWindow  />
