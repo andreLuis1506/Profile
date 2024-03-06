@@ -1,8 +1,10 @@
 <template>
   <div id="frame">
+    <div id="container" style="height: 400px; overflow: auto;">
     <slot>
-      conteudo
+      conteúdo
     </slot>
+    </div>
   </div>
 </template>
 
@@ -13,5 +15,12 @@
     background: #FFFFFF;
     border-radius: 0 0 10px 10px;
     padding: 10px;
+  }
+
+  #container::before {
+    content: "";
+    float: left;
+    visibility: hidden;
+    height: calc(50px * 3);
   }
 </style>
