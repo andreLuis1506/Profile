@@ -7,7 +7,8 @@
       <h1 id="title">Hello, World!</h1>
       <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
       <div id="group-button">
-        <ui-button>Experiencias</ui-button>
+        <ui-button @click="toggleWindow">Experiencias</ui-button>
+        <Window :is-open="windowIsOpen" />
         <ui-button>Experiencias</ui-button>
         <ui-button>Experiencias</ui-button>
         <ui-button>Experiencias</ui-button>
@@ -19,6 +20,15 @@
   </div>
 </main>
 </template>
+
+<script setup lang="ts">
+import Window from "@/components/ui/Window.vue";
+
+const windowIsOpen = ref(false)
+function toggleWindow(){
+  windowIsOpen.value = !windowIsOpen.value
+}
+</script>
 
 <style>
 body{
