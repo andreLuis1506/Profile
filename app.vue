@@ -7,11 +7,10 @@
       <h1 id="title">Hello, World!</h1>
       <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
       <div id="group-button">
-        <FolderButton @click="toggleWindow">Experiencias</FolderButton>
-        <DialogWindow :is-open="windowIsOpen" />
-        <FolderButton>Experiencias</FolderButton>
-        <FolderButton>Experiencias</FolderButton>
-        <FolderButton>Experiencias</FolderButton>
+        <DialogWindow  />
+        <DialogWindow  />
+        <DialogWindow  />
+        <DialogWindow  />
       </div>
     </div>
     <div>
@@ -23,11 +22,6 @@
 
 <script setup lang="ts">
 import DialogWindow from "~/components/DialogWindow.vue";
-
-const windowIsOpen = ref(false)
-function toggleWindow(){
-  windowIsOpen.value = !windowIsOpen.value
-}
 </script>
 
 <style>

@@ -1,5 +1,6 @@
 <template>
-  <section id="window" v-show="props.isOpen">
+  <FolderButton @click="toggleWindow">Experiencias</FolderButton>
+  <section id="window" v-show="isOpen">
     <BarWindow />
   </section>
 </template>
@@ -7,9 +8,11 @@
 <script setup lang="ts">
 import BarWindow from "~/components/BarWindow.vue";
 
-const props = defineProps<{
-  isOpen: boolean
-}>()
+const isOpen = ref(false)
+
+function toggleWindow(){
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <style scoped>
