@@ -14,7 +14,10 @@
 import BarWindow from "~/components/BarWindow.vue";
 
 const props = defineProps({
-  title: String,
+  title: {
+    type: String,
+    default: "Exemplo",
+  },
 });
 
 

@@ -1,33 +1,20 @@
 <template>
   <DialogWindow title="Experiências">
-    <h2>Sisped</h2>
-    <span>
-      Fev/2018 - Atual
-    </span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed a ipsum consectetur, scelerisque nisi nec, dignissim nisi.
-      Proin tincidunt auctor arcu, fermentum suscipit leo porta at. Suspendisse pretium ante non.
-    </p>
-    <h3>
-      Contribuições:
-    </h3>
-    <ul>
-      <li>Desenvolvimento de novas funcionalidades</li>
-      <li>Manutenção de funcionalidades existentes</li>
-      <li>Correção de bugs</li>
-    </ul>
-    <h3>
-      Tecnologias:
-    </h3>
-    <ul>
-      <li>Java</li>
-      <li>Spring Boot</li>
-      <li>Angular</li>
-      <li>PostgreSQL</li>
-    </ul>
+    <ExpItem v-bind="exp" />
   </DialogWindow>
 </template>
+
+<script setup lang="ts">
+const exp = {
+  title: 'Sisped',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n' +
+      '        Sed a ipsum consectetur, scelerisque nisi nec, dignissim nisi.\n' +
+      '        Proin tincidunt auctor arcu, fermentum suscipit leo porta at. Suspendisse pretium ante non.' ,
+  date: 'Fev/2018 - Atual',
+  contributions: ['Desenvolvimento de novas funcionalidades', 'Manutenção de funcionalidades existentes', 'Correção de bugs'],
+  technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL']
+}
+</script>
 
 <style scoped>
 #container::before {
