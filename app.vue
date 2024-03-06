@@ -7,22 +7,22 @@
       <h1 id="title">Hello, World!</h1>
       <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
       <div id="group-button">
-        <ui-button @click="toggleWindow">Experiencias</ui-button>
-        <Window :is-open="windowIsOpen" />
-        <ui-button>Experiencias</ui-button>
-        <ui-button>Experiencias</ui-button>
-        <ui-button>Experiencias</ui-button>
+        <FolderButton @click="toggleWindow">Experiencias</FolderButton>
+        <DialogWindow :is-open="windowIsOpen" />
+        <FolderButton>Experiencias</FolderButton>
+        <FolderButton>Experiencias</FolderButton>
+        <FolderButton>Experiencias</FolderButton>
       </div>
     </div>
     <div>
-      <Desenho width="495.86" height="466.92" />
+      <HomeIlustrator width="495.86" height="466.92" />
     </div>
   </div>
 </main>
 </template>
 
 <script setup lang="ts">
-import Window from "@/components/ui/Window.vue";
+import DialogWindow from "~/components/DialogWindow.vue";
 
 const windowIsOpen = ref(false)
 function toggleWindow(){
