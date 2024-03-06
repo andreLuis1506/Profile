@@ -1,3 +1,3 @@
 <template>
-  <img src="~/public/undraw_feeling_proud_qne.svg">
+  <img alt="Desenvolvedor" src="/undraw_feeling_proud_qne.svg">
 </template>

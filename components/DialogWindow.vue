@@ -1,10 +1,12 @@
 <template>
   <section id="window" v-show="props.isOpen">
-    <UiWinBar />
+    <BarWindow />
   </section>
 </template>
 
 <script setup lang="ts">
+import BarWindow from "~/components/BarWindow.vue";
+
 const props = defineProps<{
   isOpen: boolean
 }>()
