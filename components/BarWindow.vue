@@ -6,11 +6,28 @@
       </slot>
     </div>
     <div id="bottom-win-bar">
-      <button id="maximize-button"></button>
-      <button id="close-button"></button>
+      <button id="maximize-button" @click="maximizeWindow"></button>
+      <button id="close-button" @click="closeWindow"></button>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const emit = defineEmits({
+  'window:close': null,
+  'window:maximize': null
+})
+
+function closeWindow(){
+  emit('window:close')
+}
+
+function maximizeWindow(event: MouseEvent){
+  event.stopPropagation()
+  emit('window:maximize')
+}
+
+</script>
 
 <style>
 #win-bar{

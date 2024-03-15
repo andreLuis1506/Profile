@@ -14,7 +14,7 @@
     height: 100%;
     background: #FFFFFF;
     border-radius: 0 0 10px 10px;
-    padding: 10px;
+    padding: 20px;
   }
 
   #container{

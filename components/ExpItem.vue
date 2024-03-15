@@ -46,6 +46,7 @@ h2{
 
 #exp-item-container{
   margin: 0 15px 0 0;
+  max-width: 800px;
 }
 
 #first-line{
