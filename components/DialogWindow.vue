@@ -73,8 +73,19 @@ function elementDrag(event: MouseEvent) {
   clientX.value = event.clientX
   clientY.value = event.clientY
 
-  windowPositionTop.value = (windowEl.value.offsetTop - movementY.value) + 'px'
-  windowPositionLeft.value = (windowEl.value.offsetLeft - movementX.value) + 'px'
+  let  top
+  let  left
+
+  if(windowEl.value.offsetTop - movementY.value > window.innerHeight - 400) top = window.innerHeight - 400
+  else if(windowEl.value.offsetTop - movementY.value < 0) top = 0
+  else top = windowEl.value.offsetTop - movementY.value
+
+  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 800) left = window.innerWidth - 800
+  else if(windowEl.value.offsetLeft - movementX.value < 0) left = 0
+  else left = windowEl.value.offsetLeft - movementX.value
+
+  windowPositionTop.value = (top) + 'px'
+  windowPositionLeft.value = (left) + 'px'
 }
 
 </script>
@@ -87,5 +98,6 @@ function elementDrag(event: MouseEvent) {
   width: v-bind(windowWidth);
   height: v-bind(windowHeight);
   z-index: 999;
+  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
 }
 </style>

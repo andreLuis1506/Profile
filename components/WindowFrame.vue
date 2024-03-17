@@ -14,12 +14,13 @@
     height: 100%;
     background: #FFFFFF;
     border-radius: 0 0 10px 10px;
-    padding: 20px;
+    padding: 0 0 10px 10px;
   }
 
   #container{
     width: 100%;
     height: 100%;
     overflow: auto;
+    padding-top: 5px;
   }
 </style>

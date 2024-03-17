@@ -39,6 +39,7 @@ function maximizeWindow(event: MouseEvent){
   justify-content: center;
   align-items: center;
   border-radius: 10px 10px 0 0;
+  border-bottom: solid .3px rgba(0,0,0,0.1);
 }
 
 #content-win-bar{
