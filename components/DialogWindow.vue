@@ -1,6 +1,13 @@
 <template>
   <FolderButton @click="toggleWindow">{{props.title}}</FolderButton>
-  <section ref="windowEl" id="window" v-show="isOpen">
+  <section
+      ref="windowEl"
+      id="window"
+      :class="{'is-focused': isOnfocus}"
+      v-show="isOpen"
+      @click="setFocus"
+      v-click-outside="removeFocus"
+  >
     <BarWindow
         @window:close="toggleWindow"
         @window:maximize="toggleMaximize"
@@ -88,6 +95,13 @@ function elementDrag(event: MouseEvent) {
   windowPositionLeft.value = (left) + 'px'
 }
 
+const isOnfocus = ref(true)
+function setFocus(){
+  if(!isOnfocus.value) isOnfocus.value = true
+}
+function removeFocus(){
+  if(isOnfocus.value) isOnfocus.value = false
+}
 </script>
 
 <style scoped>
@@ -97,7 +111,12 @@ function elementDrag(event: MouseEvent) {
   left: v-bind(windowPositionLeft);
   width: v-bind(windowWidth);
   height: v-bind(windowHeight);
-  z-index: 999;
+  z-index: 2;
   box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+#window.is-focused{
+  z-index: 1000;
+  border: 5px solid red;
 }
 </style>
