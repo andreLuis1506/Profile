@@ -16,7 +16,7 @@
     >
       {{props.title}}
     </BarWindow>
-    <WindowFrame >
+    <WindowFrame :is-focused="isOnfocus">
       <slot>
         Conteúdo da janela
       </slot>

@@ -1,5 +1,5 @@
 <template>
-  <div id="win-bar" :class="{'is-focused': props.isActive}">
+  <div id="win-bar" @dblclick="maximizeWindow" :class="{'is-focused': props.isActive}">
     <div id="content-win-bar" :class="{'is-focused': props.isActive}" >
       <slot>
         Exemplo
@@ -83,7 +83,7 @@ function maximizeWindow(event: MouseEvent){
 }
 
 #maximize-button.is-focused{
-  background: #F5BF4F;
+  background: #61C554;
 }
 
 #close-button, #maximize-button{
