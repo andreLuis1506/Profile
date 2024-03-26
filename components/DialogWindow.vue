@@ -4,11 +4,12 @@
       ref="windowEl"
       id="window"
       :class="{'is-focused': isOnfocus}"
-      v-show="isOpen"
+      v-if="isOpen"
       @click="setFocus"
       v-click-outside="removeFocus"
   >
     <BarWindow
+        :is-active="isOnfocus"
         @window:close="toggleWindow"
         @window:maximize="toggleMaximize"
         @mousedown="drag"
@@ -34,7 +35,7 @@ const props = defineProps({
 
 const isOpen = ref(false)
 function toggleWindow(){
-  isOpen.value = !isOpen.value
+  isOnfocus.value = isOpen.value = !isOpen.value
 }
 
 const isMaximized = ref(false)
@@ -113,10 +114,11 @@ function removeFocus(){
   height: v-bind(windowHeight);
   z-index: 2;
   box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+  transition: ease-out .1s;
 }
 
 #window.is-focused{
   z-index: 1000;
-  border: 5px solid red;
+  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.30);
 }
 </style>
