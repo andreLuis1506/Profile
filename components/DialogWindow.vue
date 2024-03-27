@@ -7,12 +7,12 @@
       v-if="isOpen"
       @click="setFocus"
       v-click-outside="removeFocus"
+      @mousedown="drag"
   >
     <BarWindow
         :is-active="isOnfocus"
         @window:close="toggleWindow"
         @window:maximize="toggleMaximize"
-        @mousedown="drag"
     >
       {{props.title}}
     </BarWindow>
@@ -55,6 +55,7 @@ function maximizeWindow() {
   windowPositionLeft.value = isMaximized.value ? '0px' : '30%'
 }
 
+const isDrag = ref(false)
 const clientX: any = ref(undefined)
 const clientY: any = ref(undefined)
 const movementX =  ref(0)
@@ -72,10 +73,14 @@ function drag(event: MouseEvent){
 function closeDragElement () {
   document.onmouseup = null
   document.onmousemove = null
+  isDrag.value = false
 }
 
 function elementDrag(event: MouseEvent) {
   event.preventDefault()
+
+  isDrag.value = true
+
   movementX.value = clientX.value - event.clientX
   movementY.value = clientY.value - event.clientY
   clientX.value = event.clientX
@@ -96,6 +101,8 @@ function elementDrag(event: MouseEvent) {
   windowPositionLeft.value = (left) + 'px'
 }
 
+const transitionTime = computed(() => isDrag.value ? '0' : '.1s')
+
 const isOnfocus = ref(true)
 function setFocus(){
   if(!isOnfocus.value) isOnfocus.value = true
@@ -114,7 +121,7 @@ function removeFocus(){
   height: v-bind(windowHeight);
   z-index: 2;
   box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
-  transition: ease-out .1s;
+  transition: ease-in-out v-bind(transitionTime);
 }
 
 #window.is-focused{
