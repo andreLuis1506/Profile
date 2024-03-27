@@ -1,0 +1,26 @@
+{
+  "exp":[
+    {
+      "title": "Sisped",
+      "description": "Fui responsável pelo desenvolvimento do Front-end do Sisped, sistema web para gestão do setor pedagógico do IFBA - Irecê" ,
+      "date": "Nov 2019 - Out 2020",
+      "contributions": ["Ajudei com levantamento de requisitos e protótipos", "Conectei o Front ao Back usando RestApi", "Time usou scrum."],
+      "technologies": ["Vue", "Bulma", "Sass", "Gitlab"]
+    },
+    {
+      "title": "Preço Certo",
+      "description": "Fui o principal dev Front-end do time, responsável por desenvolver novas features, manter as antigas e migra-las para Vue. Também ajudei com melhorias de processos e treinamentos.",
+      "date": "Nov 2021 - Atualmente",
+      "contributions": [
+        "Migrei paginas em Django template para Vue/Nuxt",
+        "Manutenção em paginas com django template e Jquery",
+        "Criação de novas features",
+        "Treinei uma estagiaria",
+        "Ajudei a equipe com o processo de levantamento de requisitos de novas features",
+        "Desenho de wireframes",
+        "Propus e ajudei a implementar Design Centrado ao Usuário"
+      ],
+      "technologies": ["Nuxt", "Bootstrap", "Vuetify", "Typescript", "Sass", "Jira", "Django", "Jquery"]
+    }
+  ]
+}
