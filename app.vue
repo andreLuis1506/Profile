@@ -8,9 +8,13 @@
       <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
       <div id="group-button">
         <ExpWindow  />
-        <DialogWindow  />
-        <DialogWindow  />
-        <DialogWindow  />
+        <ProfileWindow  />
+        <FolderButton  >
+          Blog (em breve)
+        </FolderButton>
+        <FolderButton  >
+          Download CV
+        </FolderButton>
       </div>
     </div>
     <div>
@@ -19,10 +23,6 @@
   </div>
 </main>
 </template>
-
-<script setup lang="ts">
-import DialogWindow from "~/components/DialogWindow.vue";
-</script>
 
 <style>
 body{
