@@ -6,7 +6,7 @@
     </slot>
     </div>
   </div>
-    <div id="overlay" v-show="!props.isFocused"></div>
+  <div id="overlay" v-show="!props.isFocused"></div>
 </template>
 
 <script setup lang="ts">
