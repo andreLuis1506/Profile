@@ -1,5 +1,9 @@
 <template>
-  <FolderButton @click="toggleWindow">{{props.title}}</FolderButton>
+  <BaseButton @click="toggleWindow">
+    <slot name="activator" :isOpen="isOpen">
+      {{props.title}}
+    </slot>
+  </BaseButton>
   <section
       ref="windowEl"
       id="window"

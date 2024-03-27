@@ -9,12 +9,12 @@
       <div id="group-button">
         <ExpWindow  />
         <ProfileWindow  />
-        <FolderButton  >
+        <BaseButton  >
           Blog (em breve)
-        </FolderButton>
-        <FolderButton  >
+        </BaseButton>
+        <BaseButton  >
           Download CV
-        </FolderButton>
+        </BaseButton>
       </div>
     </div>
     <div>

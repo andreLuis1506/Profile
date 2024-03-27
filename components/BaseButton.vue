@@ -16,5 +16,9 @@
     padding: 4px 7px;
     font-size: 14px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 120px;
   }
 </style>
