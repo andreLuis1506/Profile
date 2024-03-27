@@ -15,5 +15,6 @@
     color: white;
     padding: 4px 7px;
     font-size: 14px;
+    cursor: pointer;
   }
 </style>

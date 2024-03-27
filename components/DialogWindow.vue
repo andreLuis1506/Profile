@@ -101,7 +101,7 @@ function elementDrag(event: MouseEvent) {
   windowPositionLeft.value = (left) + 'px'
 }
 
-const transitionTime = computed(() => isDrag.value ? '0' : '.1s')
+const transitionTime = computed(() => isDrag.value ? '0' : '.3s')
 
 const isOnfocus = ref(true)
 function setFocus(){
@@ -120,7 +120,7 @@ function removeFocus(){
   width: v-bind(windowWidth);
   height: v-bind(windowHeight);
   z-index: 2;
-  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
   transition: ease-in-out v-bind(transitionTime);
 }
 
