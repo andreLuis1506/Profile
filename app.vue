@@ -2,8 +2,8 @@
 <main>
   <div id="content">
     <div id="group-info">
-      <h1 id="title">Hello, World!</h1>
-      <p id="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nisi massa. Mauris convallis dui at felis maximus tincidunt. Etiam.</p>
+      <h1 id="title">< André L. Santos /></h1>
+      <p id="subtitle">O desenvolvedor que você precisa!</p>
       <div id="group-button">
         <ExpWindow  />
         <ProfileWindow  />
@@ -51,23 +51,30 @@ main {
 
 #group-info{
   height: 217px;
-  width: 498px;
   margin-right: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #title{
-  font-size: 58px;
+  font-size: 48px;
   font-weight: 300;
   margin: 0;
+  text-align: center;
 }
 #subtitle{
-  font-size: 14px;
+  text-align: center;
+  font-size: 20px;
+  width: 498px;
   font-weight: 300;
   color: #3D3D47;
-  margin: 28px 0;
+  margin-top: 16px;
+  margin-bottom: 28px;
 }
 
 #group-button{
+  width: 498px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
