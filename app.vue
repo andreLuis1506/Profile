@@ -1,7 +1,5 @@
 <template>
 <main>
-  <div id="background-glass">
-  </div>
   <div id="content">
     <div id="group-info">
       <h1 id="title">Hello, World!</h1>
@@ -18,7 +16,7 @@
       </div>
     </div>
     <div>
-      <HomeIlustrator width="495.86" height="466.92" />
+      <profile-pic />
     </div>
   </div>
 </main>
@@ -37,13 +35,6 @@ main {
   width: 100vw;
 }
 
-#background-glass{
-  background: #FFFFFF;
-  height: 100%;
-  width: 100%;
-  opacity: 0.35;
-}
-
 #content{
   z-index: 999;
   position: absolute;
@@ -51,7 +42,7 @@ main {
   opacity: 1;
   font-family: "Helvetica Neue", sans-serif;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -80,6 +71,5 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  //margin-top: 40px;
 }
 </style>
