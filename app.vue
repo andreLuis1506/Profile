@@ -1,5 +1,6 @@
 <template>
 <main>
+  <initial-loading />
   <div id="content">
     <div id="group-info">
       <h1 id="title">< André L. Santos /></h1>
@@ -36,7 +37,6 @@ main {
 }
 
 #content{
-  z-index: 999;
   position: absolute;
   top: 0;
   opacity: 1;
@@ -80,3 +80,6 @@ main {
   justify-content: space-between;
 }
 </style>
+<script setup lang="ts">
+import InitialLoading from "~/components/InitialLoading.vue";
+</script>
