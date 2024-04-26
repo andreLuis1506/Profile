@@ -16,7 +16,7 @@
   background-color: #E1E1E0;
   height: calc(100%);
   border-radius: 10px 0 0 10px;
-  padding: 29px 10px 10px 10px;
+  padding: 29px 10px 10px 12px;
   margin-right: 10px;
 }
 
