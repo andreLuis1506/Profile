@@ -4,7 +4,7 @@
         src="/hello.json"
         style="width: 300px; height: 300px;"
         autoplay
-        speed="2"
+        :speed="2"
         :useFrameInterpolation="false"
     ></DotLottieVue>
   </div>

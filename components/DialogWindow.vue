@@ -5,12 +5,12 @@
     </slot>
   </BaseButton>
   <section
-      ref="windowEl"
-      id="window"
-      :class="{'is-focused': isOnfocus}"
       v-if="isOpen"
-      @click="setFocus"
+      id="window"
+      ref="windowEl"
       v-click-outside="removeFocus"
+      :class="{'is-focused': isOnfocus}"
+      @click="setFocus"
       @mousedown="drag"
   >
     <BarWindow
@@ -22,7 +22,6 @@
     </BarWindow>
     <WindowFrame :is-focused="isOnfocus">
       <slot>
-        Conteúdo da janela
       </slot>
     </WindowFrame>
   </section>
@@ -126,10 +125,11 @@ function removeFocus(){
   z-index: 10;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
   transition: ease-in-out v-bind(transitionTime);
+  border-radius: 10px;
 }
 
 #window.is-focused{
   z-index: 1000;
-  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.30);
 }
 </style>
