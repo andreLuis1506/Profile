@@ -8,12 +8,16 @@
       <div id="group-button">
         <ExpWindow  />
         <ProfileWindow  />
-        <BaseButton  >
-          Blog (em breve)
-        </BaseButton>
-        <BaseButton  >
-          Download CV
-        </BaseButton>
+        <shortcut title="Blog (Em breve)">
+          <template #icon>
+            <NewsPaperIcon width="58px" fill="#3C3C43" />
+          </template>
+        </shortcut>
+        <shortcut title="Copiar Email">
+          <template #icon>
+            <EnvelopeIcon width="58px"  fill="#3C3C43" />
+          </template>
+        </shortcut>
       </div>
     </div>
     <div>
@@ -80,6 +84,8 @@ main {
   justify-content: space-between;
 }
 </style>
+
 <script setup lang="ts">
 import InitialLoading from "~/components/InitialLoading.vue";
+import EnvelopeIcon from "~/components/EnvelopeIcon.vue";
 </script>

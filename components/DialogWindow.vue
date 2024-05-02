@@ -1,9 +1,9 @@
 <template>
-  <BaseButton @click="toggleWindow">
-    <slot name="activator" :isOpen="isOpen">
+  <slot name="activator" :isOpen="isOpen" :toggleWindow="toggleWindow">
+    <BaseButton @click="toggleWindow">
       {{props.title}}
-    </slot>
-  </BaseButton>
+    </BaseButton>
+  </slot>
   <section
       v-if="isOpen"
       id="window"

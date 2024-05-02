@@ -1,8 +1,9 @@
 <template>
   <DialogWindow title="Experiências">
-    <template #activator="{isOpen}">
-      <FolderIconToggle :is-open="isOpen" />
-      Experiências
+    <template #activator="{isOpen, toggleWindow}">
+      <Shortcut title="Experiências" @click="toggleWindow" #icon>
+        <FolderIconToggle :is-open="isOpen" />
+      </Shortcut>
     </template>
     <div class="with-sidebar">
       <SideBar>
