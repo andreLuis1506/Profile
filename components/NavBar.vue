@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <div id="clock">12:00:00</div>
+    <div id="clock"> {{ clock }} </div>
     <div id="apps">
       <a href="https://github.com/andreLuis1506" target="_blank">
         <GithubIcon height="22px" fill="#7685BF" />
@@ -14,6 +14,22 @@
 
 <script setup lang="ts">
 import LinkedinIcon from "~/components/LinkedinIcon.vue";
+
+const clock = ref('00:00:00')
+
+onBeforeMount(() => {
+  setInterval(updateClock, 1000)
+})
+
+function updateClock(){
+  const date = new Date()
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const seconds = date.getSeconds().toString().padStart(2, '0');
+  // clock.value = `${hours} : ${minutes}`
+  clock.value = `${hours} : ${minutes} : ${seconds}`
+}
+
 </script>
 
 <style>
@@ -37,6 +53,7 @@ import LinkedinIcon from "~/components/LinkedinIcon.vue";
   position: relative;
   left: calc(50% - 50px);
   text-align: center;
+  font-weight: bold;
 }
 
 #apps{
