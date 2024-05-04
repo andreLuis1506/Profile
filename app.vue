@@ -2,10 +2,7 @@
 <main>
   <initial-loading />
   <div id="content">
-    <div id="navbar">
-      <div id="clock">12:00:00</div>
-      <div id="apps">| | | | | | |</div>
-    </div>
+    <NavBar />
     <div id="group-info">
       <h1 id="title"> André L. Santos </h1>
       <p id="subtitle">O desenvolvedor que você precisa!</p>
@@ -91,31 +88,10 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
-
-#navbar{
-  position: absolute;
-  top: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: calc(100vw - 22px);
-  border-radius: 6px;
-  padding: 4px;
-  background: #FFFFFF;
-  border: solid 1px rgba(0,0,0,0.1);;
-}
-
-#clock{
-  width: 100px;
-  font-size: 12px;
-  color: #3D3D47;
-  position: relative;
-  left: calc(50% - 50px);
-  text-align: center;
-}
 </style>
 
 <script setup lang="ts">
 import InitialLoading from "~/components/InitialLoading.vue";
 import EnvelopeIcon from "~/components/EnvelopeIcon.vue";
+import NavBar from "~/components/NavBar.vue";
 </script>
