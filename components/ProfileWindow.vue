@@ -1,7 +1,7 @@
 <template>
   <DialogWindow title="Sobre mim" :height="575" :disable-maximize="true">
     <template #activator="{isOpen, toggleWindow}">
-      <Shortcut title="Experiências" @click="toggleWindow" #icon>
+      <Shortcut title="Sobre mim" @click="toggleWindow" #icon>
         <UserFolder />
       </Shortcut>
     </template>

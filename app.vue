@@ -11,12 +11,12 @@
         <ProfileWindow  />
         <shortcut title="Blog (Em breve)">
           <template #icon>
-            <NewsPaperIcon width="58px" fill="#3C3C43" />
+            <BookFolder />
           </template>
         </shortcut>
         <shortcut title="Copiar Email">
           <template #icon>
-            <EnvelopeIcon width="58px"  fill="#3C3C43" />
+            <EmailIcon />
           </template>
         </shortcut>
       </div>
@@ -94,4 +94,5 @@ main {
 import InitialLoading from "~/components/InitialLoading.vue";
 import EnvelopeIcon from "~/components/EnvelopeIcon.vue";
 import NavBar from "~/components/NavBar.vue";
+import EmailIcon from "~/components/EmailIcon.vue";
 </script>

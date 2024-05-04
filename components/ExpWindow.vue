@@ -2,7 +2,7 @@
   <DialogWindow title="Experiências">
     <template #activator="{isOpen, toggleWindow}">
       <Shortcut title="Experiências" @click="toggleWindow" #icon>
-        <FolderIconToggle :is-open="isOpen" />
+        <CodeFolder />
       </Shortcut>
     </template>
     <div class="with-sidebar">
@@ -30,6 +30,7 @@
 import expDb from '~/db/exp.json'
 import FolderIconToggle from "~/components/FolderIconToggle.vue";
 import FileLinesIcon from "~/components/FileLinesIcon.vue";
+import CodeFolder from "~/components/CodeFolder.vue";
 
 const exp = expDb.exp
 
