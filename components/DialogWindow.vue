@@ -52,10 +52,10 @@ const windowHeight = ref('400px')
 const windowPositionTop = ref('40%')
 const windowPositionLeft = ref('30%')
 function maximizeWindow() {
-  windowWidth.value = isMaximized.value ? '100%' : '800px'
-  windowHeight.value = isMaximized.value ? '100%' : '400px'
-  windowPositionTop.value = isMaximized.value ? '0px' : '40%'
-  windowPositionLeft.value = isMaximized.value ? '0px' : '30%'
+  windowWidth.value = isMaximized.value ? 'calc(100% - 14px)' : '800px'
+  windowHeight.value = isMaximized.value ? '91%' : '400px'
+  windowPositionTop.value = isMaximized.value ? '42px' : '40%'
+  windowPositionLeft.value = isMaximized.value ? '6px' : '30%'
 }
 
 const isDrag = ref(false)
@@ -92,12 +92,14 @@ function elementDrag(event: MouseEvent) {
   let  top
   let  left
 
-  if(windowEl.value.offsetTop - movementY.value > window.innerHeight - 400) top = window.innerHeight - 400
-  else if(windowEl.value.offsetTop - movementY.value < 0) top = 0
+  console.log(windowEl.value.offsetTop - movementY.value, window.innerHeight - 400)
+  if(windowEl.value.offsetTop - movementY.value > window.innerHeight - 450) top = window.innerHeight - 450
+  else if(windowEl.value.offsetTop - movementY.value < 42) top = 42
   else top = windowEl.value.offsetTop - movementY.value
 
-  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 800) left = window.innerWidth - 800
-  else if(windowEl.value.offsetLeft - movementX.value < 0) left = 0
+
+  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 812) left = window.innerWidth - 812
+  else if(windowEl.value.offsetLeft - movementX.value < 12) left = 12
   else left = windowEl.value.offsetLeft - movementX.value
 
   windowPositionTop.value = (top) + 'px'

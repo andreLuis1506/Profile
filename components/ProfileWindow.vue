@@ -2,7 +2,8 @@
   <DialogWindow title="Sobre mim">
     <template #activator="{isOpen, toggleWindow}">
       <Shortcut title="Experiências" @click="toggleWindow" #icon>
-        <FolderIconToggle :is-open="isOpen" />
+        <UserFolder />
+<!--        <FolderIconToggle :is-open="isOpen" />-->
       </Shortcut>
     </template>
     <div>
