@@ -6,14 +6,14 @@
       </slot>
     </div>
     <div id="bottom-win-bar">
-      <button id="maximize-button" :class="{'is-focused': props.isActive}" @click="maximizeWindow"></button>
+      <button id="maximize-button" v-if="!props.disableMaximize" :class="{'is-focused': props.isActive}" @click="maximizeWindow"></button>
       <button id="close-button" :class="{'is-focused': props.isActive}" @click="closeWindow"></button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{isActive: boolean}>()
+const props = defineProps<{isActive: boolean, disableMaximize: boolean}>()
 
 const emit = defineEmits({
   'window:close': null,

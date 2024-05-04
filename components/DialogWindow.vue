@@ -17,6 +17,7 @@
         :is-active="isOnfocus"
         @window:close="toggleWindow"
         @window:maximize="toggleMaximize"
+        :disableMaximize="props.disableMaximize"
     >
       {{props.title}}
     </BarWindow>
@@ -34,6 +35,14 @@ const props = defineProps({
     type: String,
     default: "Exemplo",
   },
+  height: {
+    type: Number,
+    default: 400,
+  },
+  disableMaximize: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 const isOpen = ref(false)
@@ -43,18 +52,19 @@ function toggleWindow(){
 
 const isMaximized = ref(false)
 function toggleMaximize(){
+  if (props.disableMaximize) return
   isMaximized.value = !isMaximized.value
   maximizeWindow()
 }
 
 const windowWidth = ref('800px')
-const windowHeight = ref('400px')
-const windowPositionTop = ref('40%')
+const windowHeight = ref(props.height + 'px')
+const windowPositionTop = ref('10%')
 const windowPositionLeft = ref('30%')
 function maximizeWindow() {
   windowWidth.value = isMaximized.value ? 'calc(100% - 14px)' : '800px'
-  windowHeight.value = isMaximized.value ? '91%' : '400px'
-  windowPositionTop.value = isMaximized.value ? '42px' : '40%'
+  windowHeight.value = isMaximized.value ? '91%' : props.height + 'px'
+  windowPositionTop.value = isMaximized.value ? '42px' : '10%'
   windowPositionLeft.value = isMaximized.value ? '6px' : '30%'
 }
 
@@ -92,14 +102,15 @@ function elementDrag(event: MouseEvent) {
   let  top
   let  left
 
-  console.log(windowEl.value.offsetTop - movementY.value, window.innerHeight - 400)
-  if(windowEl.value.offsetTop - movementY.value > window.innerHeight - 450) top = window.innerHeight - 450
+  const height = props.height + 50
+
+  if(windowEl.value.offsetTop - movementY.value > window.innerHeight - height) top = window.innerHeight - height
   else if(windowEl.value.offsetTop - movementY.value < 42) top = 42
   else top = windowEl.value.offsetTop - movementY.value
 
 
-  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 812) left = window.innerWidth - 812
-  else if(windowEl.value.offsetLeft - movementX.value < 12) left = 12
+  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 806) left = window.innerWidth - 806
+  else if(windowEl.value.offsetLeft - movementX.value < 6) left = 6
   else left = windowEl.value.offsetLeft - movementX.value
 
   windowPositionTop.value = (top) + 'px'

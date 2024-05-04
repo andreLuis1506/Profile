@@ -3,10 +3,10 @@
     <div id="clock">12:00:00</div>
     <div id="apps">
       <a href="https://github.com/andreLuis1506" target="_blank">
-        <GithubIcon height="22px" fill="#3C3C43" />
+        <GithubIcon height="22px" fill="#7685BF" />
       </a>
       <a href="https://linkedin.com/in/andré-luis-dos-santos" target="_blank">
-        <LinkedinIcon height="22px" fill="#3C3C43" />
+        <LinkedinIcon height="22px" fill="#44A6EB" />
       </a>
     </div>
   </div>
@@ -41,7 +41,7 @@ import LinkedinIcon from "~/components/LinkedinIcon.vue";
 
 #apps{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   width: 100px;
 
