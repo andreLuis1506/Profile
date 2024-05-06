@@ -42,10 +42,14 @@ const props = defineProps({
   disableMaximize: {
     type: Boolean,
     default: false,
+  },
+  startOpen: {
+    type: Boolean,
+    default: false,
   }
 });
 
-const isOpen = ref(false)
+const isOpen = ref(props.startOpen)
 function toggleWindow(){
   isOnfocus.value = isOpen.value = !isOpen.value
 }

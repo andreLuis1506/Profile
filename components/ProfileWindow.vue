@@ -1,5 +1,5 @@
 <template>
-  <DialogWindow title="Sobre mim" :height="575" :disable-maximize="true">
+  <DialogWindow title="Sobre mim" :height="575" :disable-maximize="true" :start-open="true">
     <template #activator="{isOpen, toggleWindow}">
       <Shortcut title="Sobre mim" @click="toggleWindow" #icon>
         <UserFolder />
@@ -8,9 +8,7 @@
     <div>
       <div class="content">
         <div>
-<!--          <home-ilustrator height="300px" />-->
           <profile-pic />
-          André L. dos Santos
         </div>
         <div>
           <h2>Opa! eai?</h2>
@@ -24,7 +22,7 @@
             <li>
               <a href="https://github.com/andreLuis1506" target="_blank">
                 <BaseButton>
-                  <GithubIcon height="20px" fill="white" /> Linkedin
+                  <GithubIcon height="20px" fill="white" /> Github
                 </BaseButton>
               </a>
             </li>
@@ -43,6 +41,8 @@
 </template>
 
 <script setup lang="ts">
+
+
 </script>
 
 <style scoped>

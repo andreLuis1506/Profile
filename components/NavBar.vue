@@ -80,6 +80,5 @@ function updateClock(){
   margin-left: 6px;
   display: flex;
   gap: 6px;
-  opacity: 0.7;
 }
 </style>
