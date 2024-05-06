@@ -1,5 +1,9 @@
 <template>
   <div id="navbar">
+    <div id="my-name">
+      <CodeIcon height="12px" fill="#4186F7" border="" />
+      André Luis dos Santos
+    </div>
     <div id="clock"> {{ clock }} </div>
     <div id="apps">
       <a href="https://github.com/andreLuis1506" target="_blank">
@@ -14,6 +18,7 @@
 
 <script setup lang="ts">
 import LinkedinIcon from "~/components/LinkedinIcon.vue";
+import CodeIcon from "~/components/CodeIcon.vue";
 
 const clock = ref('00:00:00')
 
@@ -26,7 +31,6 @@ function updateClock(){
   const hours = date.getHours().toString().padStart(2, '0');
   const minutes = date.getMinutes().toString().padStart(2, '0');
   const seconds = date.getSeconds().toString().padStart(2, '0');
-  // clock.value = `${hours} : ${minutes}`
   clock.value = `${hours} : ${minutes} : ${seconds}`
 }
 
@@ -39,19 +43,20 @@ function updateClock(){
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100vw - 22px);
+  width: calc(100% - 28px);
   border-radius: 6px;
   padding: 4px;
   background: #FFFFFF;
   border: solid 1px rgba(0,0,0,0.1);
+
+  div{
+    width: 200px;
+  }
 }
 
 #clock{
-  width: 100px;
   font-size: 12px;
   color: #3D3D47;
-  position: relative;
-  left: calc(50% - 50px);
   text-align: center;
   font-weight: bold;
 }
@@ -60,11 +65,21 @@ function updateClock(){
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100px;
+  margin-right: 6px;
+  gap: 4px;
 
   a{
-    margin-left: 4px;
     height: 22px;
   }
+}
+
+#my-name{
+  font-size: 12px;
+  color: #3D3D47;
+  font-weight: bold;
+  margin-left: 6px;
+  display: flex;
+  gap: 6px;
+  opacity: 0.7;
 }
 </style>

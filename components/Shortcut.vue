@@ -19,5 +19,6 @@ const props = defineProps<{title: string}>()
   align-items: center;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin: 10px 0 10px 0;
 }
 </style>

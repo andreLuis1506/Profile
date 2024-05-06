@@ -1,9 +1,8 @@
 <template>
   <div id="sidebar">
     <div id="content">
-
+      <slot></slot>
     </div>
-    <slot></slot>
   </div>
 </template>
 
@@ -20,6 +19,4 @@
   margin-right: 10px;
 }
 
-#content{
-}
 </style>

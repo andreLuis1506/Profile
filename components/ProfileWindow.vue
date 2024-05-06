@@ -8,7 +8,9 @@
     <div>
       <div class="content">
         <div>
-          <home-ilustrator height="300px" />
+<!--          <home-ilustrator height="300px" />-->
+          <profile-pic />
+          André L. dos Santos
         </div>
         <div>
           <h2>Opa! eai?</h2>

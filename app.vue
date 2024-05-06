@@ -1,12 +1,12 @@
 <template>
-<main>
-  <initial-loading />
-  <div id="content">
-    <NavBar />
-    <div id="group-info">
-      <h1 id="title"> André L. Santos </h1>
-      <p id="subtitle">O desenvolvedor que você precisa!</p>
-      <div id="group-button">
+  <Head>
+    <Title>André L. Santos</Title>
+  </Head>
+  <main>
+    <initial-loading />
+    <div id="content">
+      <NavBar />
+      <div id="group-info">
         <ExpWindow  />
         <ProfileWindow  />
         <shortcut title="Blog (Em breve)">
@@ -21,11 +21,7 @@
         </shortcut>
       </div>
     </div>
-    <div>
-      <profile-pic />
-    </div>
-  </div>
-</main>
+  </main>
 </template>
 
 <style>
@@ -46,21 +42,20 @@ main {
 }
 
 #content{
-  position: absolute;
-  top: 0;
   opacity: 1;
   font-family: "Helvetica Neue", sans-serif;
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
+  padding: 0 10px 0 10px;
 }
 
 #group-info{
-  height: 217px;
-  margin-right: 22px;
+  margin-top: 60px;
+  margin-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,18 +76,10 @@ main {
   margin-top: 16px;
   margin-bottom: 28px;
 }
-
-#group-button{
-  width: 498px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 </style>
 
 <script setup lang="ts">
 import InitialLoading from "~/components/InitialLoading.vue";
-import EnvelopeIcon from "~/components/EnvelopeIcon.vue";
 import NavBar from "~/components/NavBar.vue";
 import EmailIcon from "~/components/EmailIcon.vue";
 </script>

@@ -62,10 +62,10 @@ const windowHeight = ref(props.height + 'px')
 const windowPositionTop = ref('10%')
 const windowPositionLeft = ref('30%')
 function maximizeWindow() {
-  windowWidth.value = isMaximized.value ? 'calc(100% - 14px)' : '800px'
-  windowHeight.value = isMaximized.value ? '91%' : props.height + 'px'
+  windowWidth.value = isMaximized.value ? 'calc(100% - 18px)' : '800px'
+  windowHeight.value = isMaximized.value ? 'calc(100% - 90px)' : props.height + 'px'
   windowPositionTop.value = isMaximized.value ? '42px' : '10%'
-  windowPositionLeft.value = isMaximized.value ? '6px' : '30%'
+  windowPositionLeft.value = isMaximized.value ? '10px' : '30%'
 }
 
 const isDrag = ref(false)
@@ -109,8 +109,8 @@ function elementDrag(event: MouseEvent) {
   else top = windowEl.value.offsetTop - movementY.value
 
 
-  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 806) left = window.innerWidth - 806
-  else if(windowEl.value.offsetLeft - movementX.value < 6) left = 6
+  if(windowEl.value.offsetLeft - movementX.value > window.innerWidth - 808) left = window.innerWidth - 808
+  else if(windowEl.value.offsetLeft - movementX.value < 10) left = 10
   else left = windowEl.value.offsetLeft - movementX.value
 
   windowPositionTop.value = (top) + 'px'
