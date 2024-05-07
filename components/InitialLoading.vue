@@ -1,7 +1,7 @@
 <template>
   <div id="loading-background">
     <DotLottieVue
-        src="/hello.json"
+        :data="hello"
         style="width: 300px; height: 300px;"
         autoplay
         :speed="2"
@@ -12,6 +12,7 @@
 
 <script setup>
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
+import * as hello from '@/public/animations/hello.json'
 </script>
 
 <style>
