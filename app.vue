@@ -36,7 +36,7 @@ body{
 
 main {
   //background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(150,144,145,1) 100%);
-  background: url("/Desktop - 1.svg") no-repeat center center fixed;
+  background: url("@/public/Desktop - 1.svg") no-repeat center center fixed;
   height: 100vh;
   width: 100vw;
   display: flex;
