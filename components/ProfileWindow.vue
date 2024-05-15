@@ -20,16 +20,21 @@
           <p>Se quiser conversar é só entrar em contato: </p>
           <ul>
             <li>
-              <a href="https://github.com/andreLuis1506" target="_blank">
-                <BaseButton>
-                  <GithubIcon height="20px" fill="white" /> Github
-                </BaseButton>
-              </a>
+              <BaseButton @click="copyEmail">
+                <CopyIcon height="20px" fill="white" /> Copiar email
+              </BaseButton>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/andr%C3%A9-luis-dos-santos" target="_blank">
                 <BaseButton>
                   <LinkedinIcon height="20px" fill="white" /> Linkedin
+                </BaseButton>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/andreLuis1506" target="_blank">
+                <BaseButton>
+                  <GithubIcon height="20px" fill="white" /> Github
                 </BaseButton>
               </a>
             </li>
@@ -41,8 +46,10 @@
 </template>
 
 <script setup lang="ts">
+import {useCopyEmail} from "~/composable/useCopyEmail";
+import CopyIcon from "~/components/CopyIcon.vue";
 
-
+const { copyEmail } = useCopyEmail()
 </script>
 
 <style scoped>
@@ -58,6 +65,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    padding: 0;
   }
 
   a{

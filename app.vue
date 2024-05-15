@@ -3,7 +3,8 @@
     <Title>André L. Santos</Title>
   </Head>
   <main>
-    <initial-loading />
+    <InitialLoading />
+    <NotificationCopiedEmail />
     <div id="content">
       <NavBar />
       <div id="group-info">
@@ -14,15 +15,17 @@
             <BookFolder />
           </template>
         </shortcut>
-        <shortcut title="Copiar Email">
-          <template #icon>
-            <EmailIcon />
-          </template>
-        </shortcut>
+        <CopyEmail />
       </div>
     </div>
   </main>
 </template>
+
+<script setup lang="ts">
+import InitialLoading from "~/components/InitialLoading.vue";
+import NavBar from "~/components/NavBar.vue";
+import NotificationCopiedEmail from "~/components/NotificationCopiedEmail.vue";
+</script>
 
 <style>
 body{
@@ -77,9 +80,3 @@ main {
   margin-bottom: 28px;
 }
 </style>
-
-<script setup lang="ts">
-import InitialLoading from "~/components/InitialLoading.vue";
-import NavBar from "~/components/NavBar.vue";
-import EmailIcon from "~/components/EmailIcon.vue";
-</script>

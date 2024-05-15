@@ -1,0 +1,1 @@
+export const useShowCopiedEmail = () => useState<boolean>('showCopiedEmail', () => false)
