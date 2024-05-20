@@ -1,8 +1,8 @@
 import {useShowCopiedEmail} from "~/composable/states";
 
 export const useCopyEmail = () => {
-    const email = 'alsss.ads@gmail.com'
-    const showCopiedEmail = useShowCopiedEmail()
+  const email = ['alsss.ads', '@', 'gmail.com'].join('')
+  const showCopiedEmail = useShowCopiedEmail()
 
   function copyEmail() {
     navigator.clipboard.writeText(email)
